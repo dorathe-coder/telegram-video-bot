@@ -86,7 +86,7 @@ OWNER_ID: 123456789
 
 Example:
 ```
-MONGODB_URI: mongodb+srv://username:password@cluster.mongodb.net/?retryWrites=true&w=majority
+MONGODB_URI: mongodb+srv://username:password@cluster.mongodb.net/...
 ```
 
 ---
