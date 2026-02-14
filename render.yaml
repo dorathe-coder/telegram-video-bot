@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: telegram-video-bot
+    env: python
+    plan: free
+    buildCommand: |
+      apt-get update && apt-get install -y ffmpeg aria2
+      pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: API_ID
+        sync: false
+      - key: API_HASH
+        sync: false
+      - key: BOT_TOKEN
+        sync: false
+      - key: OWNER_ID
+        sync: false
+      - key: DEVELOPER_NAME
+        value: "Your Name"
+      - key: SUPPORT_CONTACT
+        value: "@yourusername"
+      - key: MONGODB_URI
+        sync: false
+      - key: AUTH_USERS
+        value: ""
+      - key: ENABLE_PUBLIC_USE
+        value: "True"
+      - key: PYTHONUNBUFFERED
+        value: "1"
+    autoDeploy: true
